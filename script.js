@@ -13,9 +13,9 @@ function start(){
     scene.textContent = ""
     question.textContent = "You are an adventurous explorer searching for the legendary treasure hidden deep within the enchanted forest of Eldoria."
     button1.textContent = "Next"
-    button1.addEventListener("click", () => {
-        choice1()
-    })
+
+    button1.removeEventListener("click", start)
+    button1.addEventListener("click", choice1)
 }
 
 function choice1(){
@@ -29,12 +29,10 @@ function choice1(){
     button1.textContent = "Choice 1";
     button2.textContent = "Choice 2";
     document.body.appendChild(button2);
-    button1.addEventListener("click", () => {
-        choice11()
-    })
-    button2.addEventListener("click", () => {
-        choice12()
-    })
+
+    button1.removeEventListener("click", choice1)
+    button1.addEventListener("click", choice11)
+    button2.addEventListener("click", choice12)
 }
 
 function choice11(){
@@ -44,12 +42,11 @@ function choice11(){
     choices.removeChild(option2)
     button1.textContent = "Trust";
     button2.textContent = "Don't Trust";
-    button1.addEventListener("click", () => {
-        choice111()
-    })
-    button2.addEventListener("click", () => {
-        choice112()
-    })
+    
+    button1.removeEventListener("click", choice11)
+    button2.removeEventListener("click", choice12)
+    button1.addEventListener("click", choice111)
+    button2.addEventListener("click", choice112)
 }
 
 function choice111(){
@@ -57,9 +54,10 @@ function choice111(){
     question.textContent = "";
     button1.textContent = "Next";
     document.body.removeChild(button2);
-    button1.addEventListener("click", () => {
-        ending1()
-    })
+    
+    button1.removeEventListener("click", choice111)
+    button2.removeEventListener("click", choice112)
+    button1.addEventListener("click", ending1)
 }
 
 function choice112(){
@@ -73,12 +71,12 @@ function choice112(){
     button1.textContent = "Choice 1";
     button2.textContent = "Choice 2";
     document.body.appendChild(button2);
-    button1.addEventListener("click", () => {
-        choice1121()
-    })
-    button2.addEventListener("click", () => {
-        choice1122()
-    })
+    
+    button1.removeEventListener("click", choice111)
+    button2.removeEventListener("click", choice112)
+    button1.removeEventListener("click", choice121)
+    button1.addEventListener("click", choice1121)
+    button2.addEventListener("click", choice1122)
 }
 
 function choice1121(){
@@ -89,9 +87,10 @@ function choice1121(){
     choices.removeChild(option2)
     document.body.removeChild(button2);
     button1.textContent = "Next";
-    button1.addEventListener("click", () => {
-        ending2()
-    })
+    
+    button1.removeEventListener("click", choice1121)
+    button2.removeEventListener("click", choice1122)
+    button1.addEventListener("click", ending2)
 }
 
 function choice1122(){
@@ -101,9 +100,10 @@ function choice1122(){
     choices.removeChild(option2)
     document.body.removeChild(button2);
     button1.textContent = "Next";
-    button1.addEventListener("click", () => {
-        ending3()
-    })
+    
+    button1.removeEventListener("click", choice1121)
+    button2.removeEventListener("click", choice1122)
+    button1.addEventListener("click", ending3)
 }
 
 function choice12(){
@@ -116,12 +116,11 @@ function choice12(){
     button1.textContent = "Choice 1";
     button2.textContent = "Choice 2";
     document.body.appendChild(button2);
-    button1.addEventListener("click", () => {
-        choice121()
-    })
-    button2.addEventListener("click", () => {
-        choice112()
-    })
+    
+    button1.removeEventListener("click", choice11)
+    button2.removeEventListener("click", choice12)
+    button1.addEventListener("click", choice121)
+    button2.addEventListener("click", choice112)
 }
 
 function choice121(){
@@ -129,43 +128,46 @@ function choice121(){
     question.textContent = "";
     button1.textContent = "Next";
     document.body.removeChild(button2);
-    button1.addEventListener("click", () => {
-        ending4()
-    })
+    choices.removeChild(option1);
+    choices.removeChild(option2);
+    
+    button1.removeEventListener("click", choice121)
+    button2.removeEventListener("click", choice112)
+    button1.addEventListener("click", ending4)
 }
 
 function ending1(){
     scene.textContent = "You thank your new friends and leave the forest as a wealthy explorer.";
     question.textContent = "You win!";
     button1.textContent = "Finish";
-    button1.addEventListener("click", () => {
-        start()
-    })
+    
+    button1.removeEventListener("click", ending1)
+    button1.addEventListener("click", start)
 }
 
 function ending2(){
     scene.textContent = "You decide that adventuring is not for you and retire.";
     question.textContent = "You survive!";
     button1.textContent = "Finish";
-    button1.addEventListener("click", () => {
-        start()
-    })
+    
+    button1.removeEventListener("click", ending2)
+    button1.addEventListener("click", start)
 }
 
 function ending3(){
     scene.textContent = "You were never seen or heard from again, your story serves as a cautionary tale told to travellers hoping to get rich looking for the lost treasure";
     question.textContent = "You died?";
     button1.textContent = "Finish";
-    button1.addEventListener("click", () => {
-        start()
-    })
+    
+    button1.removeEventListener("click", ending3)
+    button1.addEventListener("click", start)
 }
 
 function ending4(){
     scene.textContent = "You head to the hidden glade where the treasure lies then leave with bags filled with gold and gems.";
     question.textContent = "You win!";
     button1.textContent = "Finish";
-    button1.addEventListener("click", () => {
-        start()
-    })
+    
+    button1.removeEventListener("click", ending4)
+    button1.addEventListener("click", start)
 }

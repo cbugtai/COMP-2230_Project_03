@@ -162,7 +162,7 @@ function ending3(){
 }
 
 function ending4(){
-    scene.textContent = "You to the hidden glade where the treasure lies then leave with bags filled with gold and gems.";
+    scene.textContent = "You head to the hidden glade where the treasure lies then leave with bags filled with gold and gems.";
     question.textContent = "You win!";
     button1.textContent = "Finish";
     button1.addEventListener("click", () => {

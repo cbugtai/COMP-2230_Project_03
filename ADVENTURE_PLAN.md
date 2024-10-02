@@ -31,8 +31,8 @@ but the forest is known for its magical creatures and tricky paths.
                 2. Ask the spirit for another way out.
 
                 If you attempt to solve the riddle:
-                Ater your attempt, white light surges from the spirit blinding you. You blink and look around and realize you're back at the edge of the forest 
-                but the well trdden path you took is nowhere to be seen.
+                After your attempt, white light surges from the spirit blinding you. You blink and look around and realize you're back at the edge of the forest 
+                but the well trodden path you took is nowhere to be seen.
 
                 If you ask for another way out.
                 White light surges from the spirit blinding you. You blink and look around finding both the pond and the spirit gone.

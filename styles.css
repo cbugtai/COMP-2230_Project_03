@@ -17,7 +17,7 @@ body {
 }
 
 #header {
-    color: rgb(3, 63, 3);
+    color: rgb(9, 77, 9);
 }
 #scenario {
     font-size: larger;
@@ -56,4 +56,8 @@ button {
 #button-container {
     display: flex;
     justify-content: center;
+}
+
+button:hover {
+    background-color: rgb(91, 223, 87);
 }

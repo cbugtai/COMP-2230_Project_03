@@ -3,6 +3,7 @@ let question = document.getElementById("question")
 let button1 = document.getElementById("next-btn")
 let choices = document.getElementById("choices")
 let scene = document.getElementById("scenario")
+let buttoncontainer = document.getElementById("button-container")
 let button2 = document.createElement("button")
 let option1 = document.createElement("li")
 let option2 = document.createElement("li")
@@ -10,8 +11,9 @@ let option2 = document.createElement("li")
 start()
 
 function start(){
-    scene.textContent = ""
-    question.textContent = "You are an adventurous explorer searching for the legendary treasure hidden deep within the enchanted forest of Eldoria."
+    scene.textContent = "You are an adventurous explorer searching for the legendary treasure hidden deep within the enchanted forest of Eldoria."
+    question.classList.remove("finish")
+    question.textContent = ""
     button1.textContent = "Next"
 
     button1.removeEventListener("click", start)
@@ -28,7 +30,7 @@ function choice1(){
     option2.textContent = "Venture off the beaten track into the dense underbrush.";
     button1.textContent = "Choice 1";
     button2.textContent = "Choice 2";
-    document.body.appendChild(button2);
+    buttoncontainer.appendChild(button2);
 
     button1.removeEventListener("click", choice1)
     button1.addEventListener("click", choice11)
@@ -53,7 +55,7 @@ function choice111(){
     scene.textContent = "The creatures lead you to a hidden glade where the treasure lies. You find chests filled with gold and gems!";
     question.textContent = "";
     button1.textContent = "Next";
-    document.body.removeChild(button2);
+    buttoncontainer.removeChild(button2);
     
     button1.removeEventListener("click", choice111)
     button2.removeEventListener("click", choice112)
@@ -70,7 +72,7 @@ function choice112(){
     option2.textContent = "Ask the spirit for another way out.";
     button1.textContent = "Choice 1";
     button2.textContent = "Choice 2";
-    document.body.appendChild(button2);
+    buttoncontainer.appendChild(button2);
     
     button1.removeEventListener("click", choice111)
     button2.removeEventListener("click", choice112)
@@ -85,7 +87,7 @@ function choice1121(){
     question.textContent = "";
     choices.removeChild(option1)
     choices.removeChild(option2)
-    document.body.removeChild(button2);
+    buttoncontainer.removeChild(button2);
     button1.textContent = "Next";
     
     button1.removeEventListener("click", choice1121)
@@ -98,7 +100,7 @@ function choice1122(){
     question.textContent = "";
     choices.removeChild(option1)
     choices.removeChild(option2)
-    document.body.removeChild(button2);
+    buttoncontainer.removeChild(button2);
     button1.textContent = "Next";
     
     button1.removeEventListener("click", choice1121)
@@ -115,7 +117,7 @@ function choice12(){
     option2.textContent = "Turn back and look for another way to the treasure.";
     button1.textContent = "Choice 1";
     button2.textContent = "Choice 2";
-    document.body.appendChild(button2);
+    buttoncontainer.appendChild(button2);
     
     button1.removeEventListener("click", choice11)
     button2.removeEventListener("click", choice12)
@@ -127,7 +129,7 @@ function choice121(){
     scene.textContent = "Inside, you find a magical artifact that reveals the treasure's location!";
     question.textContent = "";
     button1.textContent = "Next";
-    document.body.removeChild(button2);
+    buttoncontainer.removeChild(button2);
     choices.removeChild(option1);
     choices.removeChild(option2);
     
@@ -138,6 +140,7 @@ function choice121(){
 
 function ending1(){
     scene.textContent = "You thank your new friends and leave the forest as a wealthy explorer.";
+    question.classList.add("finish")
     question.textContent = "You win!";
     button1.textContent = "Finish";
     
@@ -147,6 +150,7 @@ function ending1(){
 
 function ending2(){
     scene.textContent = "You decide that adventuring is not for you and retire.";
+    question.classList.add("finish")
     question.textContent = "You survive!";
     button1.textContent = "Finish";
     
@@ -156,6 +160,7 @@ function ending2(){
 
 function ending3(){
     scene.textContent = "You were never seen or heard from again, your story serves as a cautionary tale told to travellers hoping to get rich looking for the lost treasure";
+    question.classList.add("finish")
     question.textContent = "You died?";
     button1.textContent = "Finish";
     
@@ -165,6 +170,7 @@ function ending3(){
 
 function ending4(){
     scene.textContent = "You head to the hidden glade where the treasure lies then leave with bags filled with gold and gems.";
+    question.classList.add("finish")
     question.textContent = "You win!";
     button1.textContent = "Finish";
     
